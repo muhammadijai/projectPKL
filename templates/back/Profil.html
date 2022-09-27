@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html>
+<head>
+  	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!-- Document Title -->
+<title>{{title}}</title>
+
+<!-- StyleSheets -->
+<link rel="stylesheet" href="../../static/back/css/ionicons.min.css">
+<link rel="stylesheet" href="../../static/back/css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../../static/back/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../static/back/css/main.css">
+<link rel="stylesheet" href="../../static/back/css/style.css">
+<link rel="stylesheet" href="../../static/back/css/responsive.css">
+<!--<link rel="icon" type="image/png" href="../../static/back/images/icons/favicon.ico"/>-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/back/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/back/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/back/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../static/back/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../static/back/css/main.css">
+<!--===============================================================================================-->
+
+<!-- JavaScripts -->
+<script src="../../static/back/js/vendors/modernizr.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+  <!-- Page Wrapper -->
+  <div id="wrap"> 
+    <!-- Content -->
+      <main class="cd-main-content">
+    <div id="content">
+      <div class="resume">
+        <div class="container">  
+          <!-- Resume -->
+          <div class="row">       
+              <!-- Sidebar -->
+            <div class="col-md-4">
+              <div class="side-bar">   
+                <!-- Professional Details -->
+                <img src="../../static/back/img/profil.png" class="img-responsive" alt="">  
+              </div>
+            </div>     
+            <!-- MAIN CONTENT -->
+            <div class="col-md-8">
+              <div class="inside-sec"> 
+                <!-- BIO AND SKILLS -->
+                <h5 class="tittle">Biodata</h5>
+                <!-- Blog -->
+                <section class="about-me padding-top-10 padding-bottom-50"> 
+                  <!-- Personal Info -->
+                  <ul class="personal-info">
+                    <li>
+                      <p> <span>Username</span>{{ambil_user.username}}</p>
+                    </li>
+                    <li>
+                      <p> <span>E-mail</span>{{ambil_user.email}}</p>
+                    </li>
+                    <li>
+                      <p> <span>Alamat</span>{{ambil_user.biodata.alamat}}</p>
+                    </li>
+                    <li>
+                      <p> <span>Jabatan</span>{{ambil_user.biodata.jabatan}}</p>
+                    </li>
+                    <li>
+                      <p> <span>Nomor Telepon</span>{{ambil_user.biodata.telp}}</p>
+                    </li>
+                  </ul>
+                  
+                  <!-- Dokumen -->
+                  <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                    Dokumen</h5>
+                <div class="table-responsive">
+                    <table class="table table-borderless table-nowrap mb-0">
+                        <tbody>
+                            <tr>
+                                <th>No</th>
+                                <th>Kategori File</th>
+                                <th>Deskripsi</th>
+                                <th>Tanggal Upload File</th>
+                                <th>Status</th>
+                            </tr>
+                        </t>
+                        <tbody>
+                            <tr>
+                              {% for dokumen in ambil_user.berkas_user.all %}
+                                <td>{{forloop.counter}}</td>
+                                <td>{{dokumen.kategory}}</td>
+                                <th>{{dokumen}}</th>
+                                <td>{{dokumen.date}}</td>
+                                <td><span class="badge badge-info-lighten">Sudah DiUpload</span></td>
+                            </tr>
+                              {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                  
+                </section>
+              </div>
+              <p align="right"><a class="btn btn-primary btn-sm" href="{% url 'tabelUser' %}">Kembali</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </main>
+    <!-- End Content --> 
+  </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="rights">
+        <p>© Copyright 2022 byorka</p>
+      </div>
+    </footer>
+    <!-- End Footer --> 
+  <!-- End Page Wrapper --> 
+  
+  <!-- JavaScripts --> 
+  <script src="../../static/back/js/vendors/jquery/jquery.min.js"></script> 
+  <script src="../../static/back/js/vendors/bootstrap.min.js"></script> 
+  <script src="../../static/back/js/vendors/owl.carousel.min.js"></script> 
+  <script src="../../static/back/js/vendors/jquery.isotope.min.js"></script> 
+  <script src="../../static/back/js/main.js"></script>
+  <script src="../../static/back/bootstrap/js/popper.js"></script>
+  <script src="../../static/back/select2/select2.min.js"></script>
+  </body>
+</html>
+

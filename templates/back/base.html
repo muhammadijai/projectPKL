@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../static/back/css/adminlte.min.css">
+     <!-- Bootstrap core CSS     -->
+     <link href="../../static/back/css/bootstrap.min.css" rel="stylesheet">
+
+     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<link href="../../static/back/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../static/back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../static/back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../static/back/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../static/back/dist/css/adminlte.min.css">
+</head>  
+ <body>
+          
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{% url 'menu' %}" class="brand-link">
+      <img src="../../static/back/img/logosamarinda.png"  width="40" style="opacity: .9">
+      <span class="brand-text font-weight-light">Pengarsipan Data Kepegawaian</span>
+    </a>
+
+    <!-- Sidebar -->
+    {% include 'back/menu.html' %}
+      
+      <!-- /.sidebar-menu -->
+      
+    </div>
+    
+  </aside>
+
+<div class="main-panel"> 
+   {% block content %}
+
+  {% endblock content %}
+
+
+  <!-- Footer Start -->
+  <footer class="main-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <script>document.write(new Date().getFullYear())</script> © UMKT PRAKTEK KERJA LAPANGAN
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end Footer -->
+  </body>
+
+ <!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<!--<script src="../../static/back/plugins/jquery/jquery.min.js"></script>-->
+<!-- Bootstrap 4 -->
+<script src="../../static/back/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../static/back/js/adminlte.min.js"></script>
+<!-- jQuery -->
+<script src="../../static/back/plugins/jquery/jquery.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../static/back/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../static/back/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../static/back/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../static/back/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../static/back/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../static/back/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../static/back/plugins/jszip/jszip.min.js"></script>
+<script src="../../static/back/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../static/back/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../static/back/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../static/back/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../static/back/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../static/back/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../static/back/js/demo.js"></script>
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  
+  
+</script>
+
+</html>

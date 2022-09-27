@@ -1,0 +1,97 @@
+{% extends 'back/base.html' %}
+    {% block content %}
+
+        
+          <!-- Main Sidebar Container -->
+         
+        
+          <!-- Content Wrapper. Contains page content -->
+          <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+              <div class="container-fluid">
+                <div class="row mb-2">
+                  <div class="col-sm-6">
+                    </div>
+                  <div class="col-sm-6">
+                </div>
+              </div>
+            </div><!-- /.container-fluid -->
+          </section>
+            <!-- Main content -->
+            <section class="content">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                     
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+        
+                    <div class="card">
+                      <div class="card-header">   
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Nama Akun</th>
+                            <th>Gmail</th>
+                            <th>Alamat</th>
+                            <th>Jabatan</th>
+                            <!--<th>No Telp</th>-->
+                            <th>Info</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+
+                            {% for user in semua_user %}
+
+                          <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.biodata.alamat}}</td>
+                            <td>{{user.biodata.jabatan}}</td>
+                            <!--<td>{{l.telp}}</td>-->
+                            <td><a class="btn btn-secondary btn-sm" href="{% url 'profil_user' user.username %}">
+                              <i class="fas fa-trash">
+                                Lihat User
+                              </i>     
+                          </a>
+                          </td>
+                          </tr>
+
+                          {% endfor %}
+
+                          </tfoot>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+         
+        
+          <!-- Control Sidebar -->
+          <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+          </aside>
+          <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+        
+      {% endblock content %}
+  </body>

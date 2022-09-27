@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="../static/front/fonts/home/style.css" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="sign-in-form" method="POST">
+            {% csrf_token %}
+            <h2 class="title">Form Login</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input name="username" type="text" placeholder="Username" class="form-control input-no-border">
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name="password" type="password" placeholder="Password" class="form-control input-no-border">
+            </div>
+            <input type="submit" value="Login" class="btn solid btn-fill btn-wd "/>
+            <!--<button type="submit" class="btn btn-fill btn-wd ">Login</button>-->
+            <!--<a href="{% url 'registrasi' %} " > Register </a>-->
+           
+          </form>
+          <!--<form class="register-form" method="POST">-->
+        </div>
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Buat Akun Baru ?</h3>
+            <p>
+              Pengarsipan Data Kepegawaian Dinas Kependudukan & Pencatatan Sipil.
+            </p>
+            <button class="btn transparent">
+            <a class="btn btn-primary btn-sm" href="{% url 'registrasi' %}" style="text-decoration:none;">Daftar akun</a>
+            </button>
+          </div>
+          <img src="../static/front/img/awal.png" class="image" alt="" />
+        </div>
+      </div>
+     </div>
+    <script src="../static/front/fonts/home/app.js"></script>
+  </body>
+</html>

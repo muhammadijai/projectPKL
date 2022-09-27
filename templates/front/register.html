@@ -1,0 +1,80 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="../static/front/fonts/home/style.css" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="sign-in-form" method="POST">
+            {% csrf_token %}
+            <h2 class="title">Form Login</h2>
+            <!--<div class="card card-plain">-->
+				<div class="content">
+					<div class="input-field">
+              			<i class="fas fa-user"></i>
+              		<input name="username" type="text" placeholder="Username" class="form-control input-no-border">
+            		</div>
+					<div class="input-field">
+						<i class="fas fa-smile"></i>
+					<input name="namadepan" type="text" placeholder="Nama Depan" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-smile"></i>
+					<input name="namabelakang" type="text" placeholder="Nama Belakang" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-handshake"></i>
+					<input name="jabatan" type="text" placeholder="Jabatan" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-envelope"></i>
+					<input name="email" type="text" placeholder="Email" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-lock"></i>
+					<input name="password" type="password" placeholder="Password" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-home"></i>
+					<input name="alamat" type="text" placeholder="Alamat" class="form-control input-no-border">
+				  	</div>
+					<div class="input-field">
+						<i class="fas fa-phone"></i>
+					<input name="telp" type="text" placeholder="Nomor Telepon" class="form-control input-no-border">
+				  	</div>
+					<center><button class="btn btn-success btn-block btn-round">Buat Akun</button></center>
+				</div>
+              
+          </form>
+          <!--<form class="register-form" method="POST">-->
+        </div>
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Sudah Punya Akun ?</h3>
+            <p>
+              Pengarsipan Data Kepegawaian Dinas Kependudukan & Pencatatan Sipil.
+            </p>
+            <button class="btn transparent">
+            <a class="btn btn-primary btn-sm" href="{% url 'home' %}" style="text-decoration:none;">Login</a>
+            </button>
+          </div>
+          <img src="../static/front/img/regis.png" class="image" alt="" />
+        </div>
+      </div>
+     </div>
+    <script src="../static/front/fonts/home/app.js"></script>
+  </body>
+</html>
+{% endblock content %}

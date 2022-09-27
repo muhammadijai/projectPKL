@@ -1,0 +1,50 @@
+{% load static %}
+<div class="sidebar">
+     
+    <div class="user-panel mt-3 pb-4 mb-3 d-flex">
+      <div class="image">
+        <img src="../../static/back/img/profil.png" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a data-toggle="collapse" href="#collapseExample" class="collapsed"><span>
+          {{user}} 
+          <b class="caret"></b>
+        </span>
+      </a>
+  <div class="clearfix"></div>
+    <div class="collapse" id="collapseExample">
+        <ul class="nav">
+                <li>
+                    <a href=" {% url 'logout'%} ">
+                      <span class="sidebar-normal">Keluar</span>
+                    </a>
+                </li>              
+        </ul>
+      </div>
+    </div> 
+  </div>
+<!-- Sidebar Menu -->
+  <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <li class="nav-item menu-open">
+        <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href=" {% url 'tabelFile' %} " class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            File
+          </p>
+        </a>
+      </li>
+      {% if request.session.is_operator == 'operator' %}
+      <li class="nav-item">
+        <a href=" {% url 'tabelUser' %} " class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            Jumlah User
+          </p>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
